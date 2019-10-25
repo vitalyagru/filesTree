@@ -1,0 +1,16 @@
+import {StoreStructure} from '../entities/StoreStructure'
+import { combineReducers } from 'redux';
+import localTree from './localTree';
+import apiTree from './apiTree';
+import setting from './setting';
+import {reducer as formReducer} from 'redux-form';
+
+
+const initState = {
+    localTree,
+    apiTree,
+    setting, 
+    // form: formReducer
+}
+
+export default combineReducers(initState);

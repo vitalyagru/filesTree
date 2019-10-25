@@ -1,0 +1,5 @@
+export interface StoreStructure {
+    localTree: LocalTree,
+    apiTree: ApiTree,
+    setting: Settings
+}
