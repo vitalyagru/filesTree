@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './style/icofont.min.css'
 import './style';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';

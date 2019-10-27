@@ -1,31 +1,49 @@
 import React from 'react';
-import Directory from './Directory';
+import Directory from '../Directory/Directory';
 import File from './File';
+import {TypesChild, IDirectory, IFile} from '../../entities/Tree';
 
 interface IProps {
-    data: object
+    data:  Array<IDirectory | IFile>;
+    addObject: Function;
+    deleteObject:Function;
+    marginLeft?: number;
 }
 
 interface IState {
-    opts?: object;    
+    opts?: object;
 }
 
 
-class Tree extends React.Component<IProps,IState> {
+class Tree extends React.PureComponent<IProps,IState> {
+
+    componentDidMount(){
+        // debugger;
+    }
 
     render () {
-        const {data} = this.props;
-        const names = Object.keys(data);
-
+        
+        const { data, marginLeft = 0, addObject, deleteObject} = this.props;
+        // debugger;
         return (
-            names.map( x =>  (
-                x.includes('.')
-                ?
-                <File name={x}/>
-                :
-                <Directory name={x} items={['File2', { directory2 : ['File1']}]} />
-
-            ))
+            <ul style={{marginLeft:marginLeft+'px'}}>
+                {data.map( branch => ( 
+                    branch.type === TypesChild.Directory
+                    ?
+                    <Directory  
+                        name={branch.name} 
+                        path={branch.path}  
+                        {...{marginLeft,addObject, deleteObject}}
+                        data= {branch.children ? branch.children : []}
+                    />
+                    : 
+                    <File  
+                        name={branch.name} 
+                        path={branch.path}
+                        {...{deleteObject}}  
+                    />  
+                 ) )}
+            </ul>     
         );
     }
 }

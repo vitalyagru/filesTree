@@ -14,7 +14,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 16px;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -44,4 +44,33 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+.buttons{
+	display: none;
+	position: absolute;
+	top:0;
+}
+.branch{
+	padding: 5px 0;
+	position: relative;
+}
+.branch:hover >  .buttons{
+	display: inline-block;
+}
+
+.icofont-file-text{
+	color: #535353
+}
+.icofont-file-html5{}
+.icofont-file-png{}
+.icofont-file-exe{}
+.icofont-file-document{}
+.icofont-file-css{}
+
+.hoverChild {
+	opacity: 0;
+	transition: opacity .5s;
+}
+.hoverParent:hover .hoverChild {
+	opacity: 1;
 }
