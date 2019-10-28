@@ -1,7 +1,8 @@
 import React from  'react';
-import Input from '../../style/input';
-import Error from '../../style/errorHint';
+import Input from '../../style/StyledCompoonent/Input';
+import Error from '../../style/StyledCompoonent/ErrorHint'
 import { IFormControlProps } from './types';
+
 
 const InputControl:React.FC<IFormControlProps> =  ({setValid,setName}) => {
     const [touched, setTouched] = React.useState(false)

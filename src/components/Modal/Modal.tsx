@@ -2,7 +2,7 @@ import React from 'react';
 import Portal from './Portal';
 import Backdrop from './Backdrop';
 import { IModalProps } from './types';
-import s from './Modal.module.css';
+import s from '../../style/Modules/Modal.module.css';
 
 const Modal:React.FC<IModalProps> = React.memo( ({ opt:{show, title},onClose, children}) => (<Portal>
    {show && <>

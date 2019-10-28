@@ -84,10 +84,5 @@
     "License": [
         "COPYRIGHT.txt",
         "COPYRIGHT-ja.txt"
-    ],
-    "TEST": [
-        {
-            "dialog":["FILE_TEST.txt"]
-        }
-    ]
+    ]   
 }

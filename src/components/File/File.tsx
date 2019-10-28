@@ -1,13 +1,8 @@
 import React from 'react';
-import Icon from '../File/IconType'
-import ButtonIcon from '../../style/buttonIcon';
-import FileStyle from '../../style/File';
-
-interface IFileProps {
-    name: string;
-    deleteObject: Function;
-    path: string;
-}
+import Icon from './IconType'
+import ButtonIcon from '../../style/StyledCompoonent/ButtonIcon';
+import FileStyle from '../../style/StyledCompoonent/File';
+import {IFileProps} from './types';
 
 const  File:React.FC<IFileProps>  = ( {name, path , deleteObject} ) =>  {
     const ext = name.split('.').pop();

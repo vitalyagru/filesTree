@@ -1,6 +1,6 @@
 import React from  'react';
 import FormControl from './FormControl';
-import Button from '../../style/button'
+import Button from '../../style/StyledCompoonent/Button'
 import { IFormProps } from './types';
 
 

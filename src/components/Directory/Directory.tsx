@@ -1,33 +1,19 @@
 import React from 'react';
 import Tree from '../Tree';
-import Folder from '../../style/Folder';
+import Folder from '../../style/StyledCompoonent/Folder';
 import { TypesChild } from '../../entities/Tree';
-import ButtonIcon from '../../style/buttonIcon';
+import ButtonIcon from '../../style/StyledCompoonent/ButtonIcon';
+import {IDirectoryProps} from './types';
 
-interface IProps {
-    name: string;
-    path: string;
-    data: any;
-    addObject: Function;
-    deleteObject: Function;
-    marginLeft: number;
-}
-
-interface IState {
-    show: boolean;    
-}
-
-
-const  Directory:React.FC<IProps>  = ({ name, data, path, marginLeft, addObject, deleteObject }) => {
+const  Directory:React.FC<IDirectoryProps>  = ({ name, data, path, marginLeft, addObject, deleteObject }) => {
     
     const [show, setShow ] = React.useState(false)
     const onClick = () => setShow(!show)
 
-    const onAddFile = (filename:string) => addObject(path,filename,TypesChild.File);
-    const onAddFolder = (folderName:string) => addObject(path,folderName, TypesChild.Directory);
+    const onAddFile = () => addObject(path,TypesChild.File);
+    const onAddFolder = () => addObject(path, TypesChild.Directory);
     const onDeleteFolder = () => deleteObject(path);
         
-    console.log('path',path)
     return (
         <div>
 
@@ -38,11 +24,11 @@ const  Directory:React.FC<IProps>  = ({ name, data, path, marginLeft, addObject,
                     {name}
                 </span>
                 <div className="hoverChild Folder-buttons">
-                    <ButtonIcon onClick={()=>onAddFile('someFile')} hoverColor="#3498ff">
+                    <ButtonIcon onClick={()=>onAddFile()} hoverColor="#3498ff">
                         <i className="icofont-plus"></i>
                         <i className="icofont-file-alt"></i>
                     </ButtonIcon>
-                    <ButtonIcon onClick={()=>onAddFolder('someFile')}  hoverColor="#09d3ac" >
+                    <ButtonIcon onClick={()=>onAddFolder()}  hoverColor="#09d3ac" >
                         <i className="icofont-plus"></i>
                         <i className="icofont-folder"></i>
                     </ButtonIcon>

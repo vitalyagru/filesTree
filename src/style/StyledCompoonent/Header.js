@@ -8,4 +8,5 @@ export default styled.div`
     line-height: 45px;
     height: 45px;
     color: #fff;
+    text-transform: uppercase;
 `;
